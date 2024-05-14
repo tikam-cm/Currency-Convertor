@@ -31,8 +31,8 @@ const App = (): JSX.Element => {
     if (!inputValue) {
       return Snackbar.show({
         text: "Enter a value to convert",
-        backgroundColor: "#EA7773",
-        textColor: "#000000"
+        backgroundColor: "red",
+        textColor: "#fff"
       })
     }
 
@@ -44,7 +44,7 @@ const App = (): JSX.Element => {
       setTargetCurrency(targetValue.name)
     } else {
       return Snackbar.show({
-        text: "NOt a valid number to convert",
+        text: "Not a valid number to convert",
         backgroundColor: "#F4BE2C",
         textColor: "#000000"
       })
@@ -65,6 +65,7 @@ const App = (): JSX.Element => {
             onChangeText={setInputValue}
             keyboardType='number-pad'
             placeholder='Enter amount in Rupees'
+            style={styles.inputAmountFieldStyle}
             />
           </View>
           {resultValue && (
@@ -100,7 +101,8 @@ const App = (): JSX.Element => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1212',
+    backgroundColor: 'darkgrey',
+    paddingTop:50
   },
   topContainer: {
     flex: 1,
@@ -108,9 +110,15 @@ const styles = StyleSheet.create({
     justifyContent: 'space-evenly',
     color: 'white'
   },
+  inputAmountFieldStyle:{
+    backgroundColor: 'white',
+    borderRadius:5,
+    width:180,
+    padding:8
+  },
   resultTxt: {
-    fontSize: 32,
-    color: '#000000',
+    fontSize: 28,
+    color: '#ffffff',
     fontWeight: '800',
   },
   rupee: {
